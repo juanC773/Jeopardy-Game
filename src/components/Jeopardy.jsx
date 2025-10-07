@@ -5,55 +5,69 @@ import { useState } from 'react';
 // ============================================
 
 const preguntasJuanDavid = [
-  "Pregunta 1",
-  "Pregunta 2", 
-  "Pregunta 3",
-  "Pregunta 4",
-  "Pregunta 5",
-  "Pregunta 6",
-  "Pregunta 7",
-  "Pregunta 8",
-  "Pregunta 9",
-  "¿Cuál es la diferencia fundamental entre los modelos de lenguaje pre-entrenados y los modelos fine-tuned específicos para tareas particulares?"
+    //columna 1
+  "¿Qué son las ideologías según Van Dijk: opiniones individuales o sistemas de creencias compartidas?", //200
+  "Da 3 ejemplos de ideologías.", //400
+  "Mencione una función social de las ideologías", //600
+  "Mencione dos ejemplos de pares de ideologías opuestas: una dominante y una de resistencia.", //800
+  "Las 5 cosas que hacen que algo no sea una ideologia:", //1000
+
+  //columna 2
+  "¿Verdadero o falso? Las ideologías son siempre negativas.",//200
+  "Según Van Dijk, ¿el feminismo es una ideología dominante o de resistencia?", //400
+  "Se considera que las ideologías son solo herramientas de los poderosos para engañar a los débiles, y que solo los dominantes las poseen.", //600
+  "El iceberg mostrado estaba conformado de 3 partes. Cuales eran?", //800
+  "¿Cuales son los 3 pilares para que algo sea considerado ideología?", //1000
 ];
 
 const preguntasCatalina = [
-  "Pregunta 1",
-  "Pregunta 2",
-  "Pregunta 3",
-  "Pregunta 4",
-  "Pregunta 5",
-  "Pregunta 6",
-  "Pregunta 7",
-  "Pregunta 8",
-  "Pregunta 9",
-  "Pregunta 10"
+  // columna 1
+  "¿Cuál es la naturaleza principal de las ideologías, definidas como representaciones sociales que consisten en sistemas de...?", //200
+  "Mencione dos de las instituciones o colectividades organizadas (además de los movimientos sociales) que típicamente poseen ideologías de grupo.", //400
+  "Los maestros de inglés son un ejemplo de grupo social profesional. ¿Qué colectividad son los hablantes del inglés en este contraste?", //600
+  "Además de las quejas no atendidas, ¿cuál es la condición clave que provoca que las ideologías se desintegren gradualmente en un grupo?", //800
+  "¿Qué nombre reciben los métodos explícitos y formalizados que usan los grupos, como los sermones o los folletos de propaganda, para enseñar ideologías a los nuevos miembros?", //1000
+
+  // columna 2
+  "¿Qué tipo de colectividades, como las nacionales o lingüísticas, tienen conocimiento y valores pero no desarrollan o necesitan ideologías?", //200
+  "¿Qué término describe el proceso por el cual las ideologías se adquieren a lo largo del tiempo, ya que uno no se vuelve racista o feminista de la noche a la mañana?", //400
+  "¿Cuáles son las fuentes primarias a través de las cuales las personas adquieren, expresan y reproducen sus ideologías, como la interacción comunicativa hablada o escrita?", //600
+  "A diferencia de los partidos, grupos como los racistas o conservadores, que no siempre están organizados formalmente, se asemejan más a estas colectividades informales donde se comparten creencias.", //800
+  "¿Qué ejemplo histórico se menciona en las fuentes como movimientos sociales de los años setenta que se desintegraron gradualmente?" //1000
 ];
+
 
 const preguntasSamuel = [
-  "Pregunta 1",
-  "Pregunta 2",
-  "Pregunta 3",
-  "Pregunta 4",
-  "Pregunta 5",
-  "Pregunta 6",
-  "Pregunta 7",
-  "Pregunta 8",
-  "Pregunta 9",
-  "Pregunta 10"
+  // columna 1
+  "¿Según Van Dijk, a través de qué medio principal se expresan y adquieren las ideologías?", //200
+  "¿Qué diferencia hay entre el discurso políticamente correcto y la manipulación discursiva?", //400
+  "¿Cómo define Van Dijk la polarización entre 'Nosotros' y 'Ellos' dentro del discurso ideológico?", //600
+  "¿Qué es la representación social?", //800
+  "¿Qué papel juegan los procesos cognitivos en la producción del discurso ideológico?", //1000 (repetida, podrías cambiarla si quieres)
+
+  // columna 2
+  "¿Cuáles son algunas estrategias lingüísticas que permiten ocultar la ideología en el discurso?", //200
+  "¿Qué relación existe entre ideología, conocimiento y lo que se da por supuesto en el discurso?", //400
+  "Menciona los tres procesos cognitivos de los que habla Van Dijk", //600
+  "¿De qué manera el contexto condiciona la transparencia o el ocultamiento ideológico?", //800
+  "¿Cómo se relaciona la propaganda con la difusión sistemática de ideologías según Van Dijk?" //1000
 ];
 
+
 const preguntasJuanJose = [
-  "Pregunta 1",
-  "Pregunta 2",
-  "Pregunta 3",
-  "Pregunta 4",
-  "Pregunta 5",
-  "Pregunta 6",
-  "Pregunta 7",
-  "Pregunta 8",
-  "Pregunta 9",
-  "Pregunta 10"
+  //columna 1
+  "¿De qué trata la canción “Ode To Viceroy”?", //200
+  "¿De qué trata la canción Saudade? ", //400
+  "¿Cuanto tiempo estuvo separada la banda “American Football”? ", //600
+  "¿De donde es la banda “Title Fight”?", //800
+  "¿Que versículo habla la canción “Falling Cloud 9”?", //1000
+
+  //columna 2
+  "¿De qué año es el álbum “Diferencias Creativas Irreconciliables”?",//200
+  "¿De qué trata la canción “Zoey 101”?", //400
+  "¿Qué movimiento promovió la banda “Title Fight”?", //600
+  "¿Cual fue el mayor motivante de la canción “Casa Nueva”?", //800
+  "¿Por qué la música es un método de comunicación de discursos tan poderosa?" //1000
 ];
 
 // ============================================
