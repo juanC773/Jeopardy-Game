@@ -19,13 +19,25 @@ export default function RuletaEquipos() {
   const [girando, setGirando] = useState(false);
   const [rotacion, setRotacion] = useState(0);
   const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false);
+  const [equiposUsadosEnRonda, setEquiposUsadosEnRonda] = useState([]);
 
   const colores = [
     '#8B5CF6', '#EC4899', '#06B6D4', '#F59E0B',
     '#10B981', '#EF4444', '#6366F1', '#14B8A6'
   ];
 
-  const equiposActivos = todosLosEquipos.filter(grupo => oportunidadesPorGrupo[grupo] > 0);
+  const rondaActual = Math.floor(respuestas.length / 6) + 1;
+  
+  // En la ronda 4 (última ronda), permitir que los equipos se repitan
+  const equiposActivos = todosLosEquipos.filter(grupo => {
+    if (oportunidadesPorGrupo[grupo] === 0) return false;
+    
+    // Si estamos en la ronda 4, no aplicar la restricción de equipos usados
+    if (rondaActual === 4) return true;
+    
+    // En rondas 1-3, aplicar la restricción normal
+    return !equiposUsadosEnRonda.includes(grupo);
+  });
 
   const girarRuleta = () => {
     if (girando || equiposActivos.length === 0) return;
@@ -51,22 +63,50 @@ export default function RuletaEquipos() {
   const respuestaCorrecta = () => {
     if (!equipoSeleccionado) return;
     
-    setRespuestas(prev => [...prev, { grupo: equipoSeleccionado, correcta: true }]);
+    const nuevasRespuestas = [...respuestas, { grupo: equipoSeleccionado, correcta: true }];
+    setRespuestas(nuevasRespuestas);
     setOportunidadesPorGrupo(prev => ({
       ...prev,
       [equipoSeleccionado]: prev[equipoSeleccionado] - 1
     }));
+    
+    const rondaDespuesDeRespuesta = Math.floor(nuevasRespuestas.length / 6) + 1;
+    
+    // Solo agregar a equipos usados si NO estamos en la ronda 4
+    if (rondaDespuesDeRespuesta !== 4) {
+      setEquiposUsadosEnRonda(prev => [...prev, equipoSeleccionado]);
+    }
+    
+    // Si completamos 6 respuestas en la ronda, resetear equipos usados
+    if (nuevasRespuestas.length % 6 === 0) {
+      setEquiposUsadosEnRonda([]);
+    }
+    
     setEquipoSeleccionado(null);
   };
 
   const respuestaIncorrecta = () => {
     if (!equipoSeleccionado) return;
     
-    setRespuestas(prev => [...prev, { grupo: equipoSeleccionado, correcta: false }]);
+    const nuevasRespuestas = [...respuestas, { grupo: equipoSeleccionado, correcta: false }];
+    setRespuestas(nuevasRespuestas);
     setOportunidadesPorGrupo(prev => ({
       ...prev,
       [equipoSeleccionado]: prev[equipoSeleccionado] - 1
     }));
+    
+    const rondaDespuesDeRespuesta = Math.floor(nuevasRespuestas.length / 6) + 1;
+    
+    // Solo agregar a equipos usados si NO estamos en la ronda 4
+    if (rondaDespuesDeRespuesta !== 4) {
+      setEquiposUsadosEnRonda(prev => [...prev, equipoSeleccionado]);
+    }
+    
+    // Si completamos 6 respuestas en la ronda, resetear equipos usados
+    if (nuevasRespuestas.length % 6 === 0) {
+      setEquiposUsadosEnRonda([]);
+    }
+    
     setEquipoSeleccionado(null);
   };
 
@@ -80,6 +120,7 @@ export default function RuletaEquipos() {
     setEquipoSeleccionado(null);
     setRotacion(0);
     setMostrarConfirmacion(false);
+    setEquiposUsadosEnRonda([]);
   };
 
   const agruparPorRondas = () => {
