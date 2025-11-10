@@ -1,14 +1,13 @@
-# Trivia Challenge - Sistema de Juego Interactivo para Exposiciones
+# Jeopardy
+## [Ver el juego aquí](https://jeopardy-gamee.netlify.app)
 
-Sistema de trivia interactivo con ruleta de equipos y tablero de preguntas estilo Jeopardy, diseñado para hacer exposiciones más dinámicas y participativas.
-
-## 📋 Descripción
+##  Descripción
 
 Este proyecto combina dos componentes principales:
 1. **Tablero Jeopardy**: Preguntas organizadas por expositor con diferentes puntajes
 2. **Ruleta de Equipos**: Sistema de selección aleatoria con gestión de oportunidades
 
-## 🎮 Reglas del Juego
+##  Reglas del Juego
 
 ### Estructura Básica
 - Cada expositor presenta su parte (~20 minutos)
@@ -29,7 +28,7 @@ Este proyecto combina dos componentes principales:
 ### Ganador
 El equipo con más puntos al final de todas las rondas.
 
-## 🛠️ Componentes
+##  Componentes
 
 ### Jeopardy Board (`JeopardyBoard.jsx`)
 Tablero de preguntas con:
@@ -47,7 +46,7 @@ Sistema de selección con:
 - Sistema de rondas automático (cada 6 respuestas)
 - Confirmación antes de resetear
 
-## ✏️ Editar las Preguntas
+##  Editar las Preguntas
 
 Las preguntas se configuran fácilmente al inicio del archivo `JeopardyBoard.jsx`:
 ```javascript
